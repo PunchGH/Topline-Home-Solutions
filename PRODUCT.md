@@ -37,14 +37,15 @@ Real company, two physical offices (Nepean/Ottawa, ON and Calgary, AB) with dist
 
 ## Brand Commitments
 
-- Logo (`Topline-Logo.png`) is the palette authority: white ground, near-black text/structure, gold gradient (roofline mark, rule lines) as a committed accent color, not a token accent.
+- Logo (`Topline-Logo.png`) is the content/typography authority: white ground, near-black text/structure. Its gold is rendered as flat, saturated safety-amber — no gradients — plus a steel-blue secondary accent for real color range. Redirected from an initial gold-gradient treatment at explicit user request, 2026-09-15 ("no need to use gradient colors to make it look like gold... colorize the website... more industrious").
 - Layout/composition rhythm is pinned to the `Northforge Landing Page - Light (1).html` guide's section structure and type system (Oswald display / Barlow body / Space Mono labels) — recolored and recontented for TopLine, never Northforge's orange/dark-hero identity.
-- Both confirmed directly with the user before this build (implementation-planning conversation, 2026-09-15).
+- Hero is a full-bleed looping video (real stock jobsite footage, swap-ready for real company footage), not a static photo — per the same 2026-09-15 request.
+- All confirmed directly with the user (implementation-planning conversation and the 2026-09-15 industrial-redesign request).
 
 ## Evidence on Hand
 
-- Real: all company copy, phone numbers, addresses, service descriptions (9 scraped `.md` files), logo file, 6 hotlinkable service icon SVGs.
-- Not real / must not be fabricated as fact: testimonials, project photography, process-flow steps, FAQ copy — see Capabilities and Constraints for how each is handled.
+- Real: all company copy, phone numbers, addresses, service descriptions (9 scraped `.md` files), logo file, 6 hotlinkable service icon SVGs, verified real (non-AI) stock photography and one stock video (a roofer installing shingles in safety gear, Pexels) for the hero — none depict actual TopLine jobs.
+- Not real / must not be fabricated as fact: testimonials, project photography/video, process-flow steps, FAQ copy — see Capabilities and Constraints for how each is handled.
 
 ## Product Principles
 

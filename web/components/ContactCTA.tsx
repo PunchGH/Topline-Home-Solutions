@@ -72,7 +72,7 @@ export default function ContactCTA() {
                 <label htmlFor="message">Message</label>
                 <textarea id="message" name="message" />
               </div>
-              <button type="submit" className="btn btn--gold">Send Message</button>
+              <button type="submit" className="btn btn--amber">Send Message</button>
               <p className="form-note">Prototype form — no message is actually sent.</p>
             </form>
           )}

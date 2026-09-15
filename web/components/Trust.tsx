@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Trust() {
   return (
-    <section id="trust" className="section section--soft">
+    <section id="trust" className="section section--steel-pale">
       <div className="wrap trust">
         <div className="trust__media">
           <Image
@@ -41,7 +41,7 @@ export default function Trust() {
           </ul>
 
           <div className="hero__ctas" style={{ marginTop: 34 }}>
-            <a className="btn btn--gold" href="#contact">Schedule Now</a>
+            <a className="btn btn--amber" href="#contact">Schedule Now</a>
             <a className="btn btn--ghost-dark" href="#services">View All Services</a>
           </div>
         </div>

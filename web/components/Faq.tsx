@@ -7,7 +7,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section section--deep">
+    <section id="faq" className="section section--soft">
       <div className="wrap">
         <div className="section__head">
           <h2>Questions, Answered Straight</h2>

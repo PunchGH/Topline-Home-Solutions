@@ -2,7 +2,7 @@ import { processSteps } from "@/lib/content";
 
 export default function Process() {
   return (
-    <section id="process" className="section section--deep">
+    <section id="process" className="section section--steel-deep">
       <div className="wrap">
         <div className="process__head">
           <h2>From First Call to Final Walkthrough</h2>

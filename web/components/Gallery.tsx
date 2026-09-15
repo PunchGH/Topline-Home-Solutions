@@ -3,7 +3,7 @@ import { galleryImages } from "@/lib/content";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="section section--soft">
+    <section id="gallery" className="section">
       <div className="wrap">
         <div className="section__head">
           <h2>The Kind of Work We Do</h2>

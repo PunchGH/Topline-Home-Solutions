@@ -5,7 +5,7 @@ export default function Reviews() {
   const rest = reviews.filter((r) => r !== lead);
 
   return (
-    <section className="section">
+    <section className="section section--steel-pale">
       <div className="wrap">
         <div className="section__head">
           <h2>What Homeowners Say</h2>

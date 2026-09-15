@@ -76,7 +76,7 @@ export default function Nav() {
 
         <div className="nav__actions">
           <a className="nav__phone" href={office.phoneHref}>{office.phone}</a>
-          <a className="btn btn--gold btn--sm" href="#contact">Get Free Quote</a>
+          <a className="btn btn--amber btn--sm" href="#contact">Get Free Quote</a>
           <button
             type="button"
             className="nav__burger"
@@ -104,7 +104,7 @@ export default function Nav() {
         <a href="#gallery" className="mobile-panel__link" onClick={closeMobile}>Gallery</a>
         <a href="#contact" className="mobile-panel__link" onClick={closeMobile}>Contact</a>
         <div className="mobile-panel__cta">
-          <a className="btn btn--gold" href="#contact" onClick={closeMobile}>Get Free Quote</a>
+          <a className="btn btn--amber" href="#contact" onClick={closeMobile}>Get Free Quote</a>
           <a className="btn btn--ghost-dark" href={office.phoneHref}>{office.phone}</a>
         </div>
       </div>

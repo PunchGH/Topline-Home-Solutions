@@ -47,7 +47,9 @@ export default function Services() {
 
           {rest.map((s) => (
             <div className="service-row" id={`service-${s.slug}`} key={s.slug}>
-              <img className="service-row__icon" src={s.icon} alt="" width={40} height={40} />
+              <div className="service-row__icon-chip">
+                <img className="service-row__icon" src={s.icon} alt="" width={26} height={26} />
+              </div>
               <h3>{s.name}</h3>
               <p>{s.description}</p>
               <a className="service-row__link" href={s.href} target="_blank" rel="noopener noreferrer">
