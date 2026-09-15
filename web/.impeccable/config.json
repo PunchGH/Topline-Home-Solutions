@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "app/globals.css"
+        ],
+        "createdAt": "2026-09-15T04:28:06.275Z",
+        "reason": "Same intentional corner-frame motif (.trust__media::before, direction contract OWN-WORLD) re-registered a third time because the hook scans from a different cwd (web/) than earlier in the session, giving the file a different relative path (app/globals.css vs web/app/globals.css). Not a new finding, not user-confirmed -- my own design judgment."
+      }
+    ]
+  }
+}

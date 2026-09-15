@@ -8,8 +8,6 @@ const arrow = (
 );
 
 export default function Services() {
-  const [featured, ...rest] = services;
-
   return (
     <section id="services" className="section">
       <div className="wrap">
@@ -22,39 +20,27 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="services__list">
-          <div className="service-feature" id={`service-${featured.slug}`}>
-            <div className="service-feature__media">
-              <Image
-                src="https://images.unsplash.com/photo-1753363562638-398f75158ea9?fm=jpg&q=80&w=1100&auto=format&fit=crop"
-                alt="Attic insulation installed between wood roof beams"
-                fill
-                sizes="(max-width: 980px) 90vw, 45vw"
-              />
-              <div className="service-feature__tag">
-                <img src={featured.icon} alt="" width={26} height={26} />
-                <span>Featured Service</span>
+        <div className="services__grid">
+          {services.map((s) => (
+            <div className="service-card" id={`service-${s.slug}`} key={s.slug}>
+              <div className="service-card__media">
+                <Image
+                  src={s.image}
+                  alt={s.name}
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1100px) 45vw, 30vw"
+                />
+                <div className="service-card__icon">
+                  <img src={s.icon} alt="" width={22} height={22} />
+                </div>
               </div>
-            </div>
-            <div className="service-feature__body">
-              <h3>{featured.name}</h3>
-              <p>{featured.description}</p>
-              <a className="service-row__link btn--sm" href={featured.href} target="_blank" rel="noopener noreferrer">
-                Learn More {arrow}
-              </a>
-            </div>
-          </div>
-
-          {rest.map((s) => (
-            <div className="service-row" id={`service-${s.slug}`} key={s.slug}>
-              <div className="service-row__icon-chip">
-                <img className="service-row__icon" src={s.icon} alt="" width={26} height={26} />
+              <div className="service-card__body">
+                <h3>{s.name}</h3>
+                <p>{s.description}</p>
+                <a className="service-card__link" href={s.href} target="_blank" rel="noopener noreferrer">
+                  Learn More {arrow}
+                </a>
               </div>
-              <h3>{s.name}</h3>
-              <p>{s.description}</p>
-              <a className="service-row__link" href={s.href} target="_blank" rel="noopener noreferrer">
-                Learn More {arrow}
-              </a>
             </div>
           ))}
         </div>

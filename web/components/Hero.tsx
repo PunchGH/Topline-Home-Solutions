@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
       <div className="hero__scrim" aria-hidden="true" />
 
-      <div className="hero__content wrap">
+      <div className="hero__content">
         <h1 className="hero__title reveal reveal--1">
           Boost Energy Efficiency and <em>Indoor Air Quality</em>
         </h1>

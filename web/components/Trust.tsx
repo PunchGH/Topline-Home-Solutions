@@ -1,49 +1,58 @@
 import Image from "next/image";
 
+const benefits = [
+  {
+    num: "01",
+    title: "Year-Round Energy Savings",
+    body: "Your home holds its temperature, so your system runs less, and you pay less.",
+  },
+  {
+    num: "02",
+    title: "Healthier Indoor Comfort",
+    body: "Cleaner air and steady temperatures make every room feel better.",
+  },
+  {
+    num: "03",
+    title: "Lasting Home Protection",
+    body: "Moisture control protects against mold and water damage, and raises your home's value.",
+  },
+];
+
 export default function Trust() {
   return (
     <section id="trust" className="section section--steel-pale">
-      <div className="wrap trust">
-        <div className="trust__media">
-          <Image
-            src="https://plus.unsplash.com/premium_photo-1661688361733-a50696e91db6?fm=jpg&q=80&w=1000&auto=format&fit=crop"
-            alt="Family relaxing comfortably at home"
-            fill
-            sizes="(max-width: 980px) 90vw, 38vw"
-          />
-        </div>
-        <div className="trust__body">
-          <h2>Durable Home Insulation Solutions You Can Trust</h2>
-          <p>
-            Homeowners trust TopLine Home Solutions for insulation that truly lasts.
-            Quality drives every project we do, from the first inspection to the
-            final walkthrough — with 20+ years of experience, we bring proven
-            results to your home.
-          </p>
-          <p>
-            We treat your house like it matters, because it does. Ready for a
-            warmer winter, a cooler summer, and a healthier home?
-          </p>
-
-          <ul className="trust__points">
-            <li>
-              <span className="tick" aria-hidden="true" />
-              <span><strong>Year-Round Energy Savings.</strong> Your home holds its temperature, so your system runs less, and you pay less.</span>
-            </li>
-            <li>
-              <span className="tick" aria-hidden="true" />
-              <span><strong>Healthier Indoor Comfort.</strong> Cleaner air and steady temperatures make every room feel better.</span>
-            </li>
-            <li>
-              <span className="tick" aria-hidden="true" />
-              <span><strong>Lasting Home Protection.</strong> Moisture control protects against mold and water damage, and raises your home&apos;s value.</span>
-            </li>
-          </ul>
-
-          <div className="hero__ctas" style={{ marginTop: 34 }}>
-            <a className="btn btn--amber" href="#contact">Schedule Now</a>
-            <a className="btn btn--ghost-dark" href="#services">View All Services</a>
+      <div className="wrap">
+        <div className="trust">
+          <div className="trust__media">
+            <Image
+              src="https://plus.unsplash.com/premium_photo-1661688361733-a50696e91db6?fm=jpg&q=80&w=1000&auto=format&fit=crop"
+              alt="Family relaxing comfortably at home"
+              fill
+              sizes="(max-width: 980px) 90vw, 38vw"
+            />
           </div>
+          <div className="trust__body">
+            <h2>Durable Home Insulation Solutions You Can Trust</h2>
+            <p>
+              Homeowners trust TopLine Home Solutions for insulation that truly
+              lasts — 20+ years of experience, from the first inspection to the
+              final walkthrough.
+            </p>
+            <div className="hero__ctas" style={{ marginTop: 34 }}>
+              <a className="btn btn--amber" href="#contact">Schedule Now</a>
+              <a className="btn btn--ghost-dark" href="#services">View All Services</a>
+            </div>
+          </div>
+        </div>
+
+        <div className="trust__cards">
+          {benefits.map((b) => (
+            <div className="trust-card" key={b.num}>
+              <div className="trust-card__num">{b.num}</div>
+              <h3>{b.title}</h3>
+              <p>{b.body}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -66,6 +66,7 @@ export interface Service {
   name: string;
   description: string;
   icon: string;
+  image: string;
   href: string;
 }
 
@@ -76,6 +77,7 @@ export const services: Service[] = [
     description:
       "High-performance cellulose insulation improves your home's thermal efficiency and year-round comfort, reducing heat loss and keeping every room comfortable.",
     icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-01.svg",
+    image: "https://images.unsplash.com/photo-1753460133435-bf41927f77f7?fm=jpg&q=80&w=900&auto=format&fit=crop",
     href: "https://www.toplinehome.ca/services/attic-insulation/",
   },
   {
@@ -84,6 +86,7 @@ export const services: Service[] = [
     description:
       "We seal structural air leaks to keep conditioned air inside. Better airflow controls moisture and improves your HVAC's overall efficiency.",
     icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-02.svg",
+    image: "https://images.unsplash.com/photo-1558358235-a0a93f68a52c?fm=jpg&q=80&w=900&auto=format&fit=crop",
     href: "https://www.toplinehome.ca/services/air-sealing-ventilation/",
   },
   {
@@ -92,6 +95,7 @@ export const services: Service[] = [
     description:
       "Dense insulation offers superior reduction between walls for quieter living areas. Enjoy better acoustic control and enhanced daily relaxation in your home.",
     icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-03.svg",
+    image: "https://images.unsplash.com/photo-1753363562647-6a5f6296dedc?fm=jpg&q=80&w=900&auto=format&fit=crop",
     href: "https://www.toplinehome.ca/services/cellulose-soundproofing/",
   },
   {
@@ -100,6 +104,7 @@ export const services: Service[] = [
     description:
       "This advanced roof coating provides waterproofing and extra durability to any surface, adding years to your roof's life and increasing weather resistance.",
     icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-04.svg",
+    image: "https://images.unsplash.com/photo-1527484728228-e601f31ddefa?fm=jpg&q=80&w=900&auto=format&fit=crop",
     href: "https://www.toplinehome.ca/services/gonano-roofing-spray/",
   },
   {
@@ -108,6 +113,7 @@ export const services: Service[] = [
     description:
       "Our professional crew safely removes old or contaminated materials to keep your family healthy while preparing for new, high-performance solutions.",
     icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-05.svg",
+    image: "https://images.unsplash.com/photo-1753363562638-398f75158ea9?fm=jpg&q=80&w=900&auto=format&fit=crop",
     href: "https://www.toplinehome.ca/services/attic-insulation-removal/",
   },
   {
@@ -116,6 +122,7 @@ export const services: Service[] = [
     description:
       "Targeted treatments identify and eliminate mold colonies at the source, protecting your indoor air quality and preventing future mold growth.",
     icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-06.svg",
+    image: "https://images.unsplash.com/photo-1708895240122-418c6902685e?fm=jpg&q=80&w=900&auto=format&fit=crop",
     href: "https://www.toplinehome.ca/services/mold-removal-prevention/",
   },
 ];
@@ -190,28 +197,37 @@ export interface Review {
   quote: string;
   name: string;
   location: string;
-  lead?: boolean;
+  time: string;
+  avatarColor: string;
 }
 
+// Styled as a Google-review widget per the client's request — content is the
+// same real sample quotes used elsewhere, names/avatars/dates are prototype
+// placeholders, not a live Google Business Profile connection.
 export const reviews: Review[] = [
   {
     quote:
       "The team was thorough from the first inspection to the final walkthrough. Our upstairs finally holds its temperature and the furnace runs less.",
     name: "Sample homeowner",
     location: "Ottawa, ON",
-    lead: true,
+    time: "3 weeks ago",
+    avatarColor: "#a5680a",
   },
   {
     quote:
       "Cellulose insulation made a real difference for noise between floors. Clean job, no mess left behind.",
     name: "Sample homeowner",
     location: "Nepean, ON",
+    time: "1 month ago",
+    avatarColor: "#46626f",
   },
   {
     quote:
       "GoNano coating went on fast and the roof hasn't had a single leak since.",
     name: "Sample homeowner",
     location: "Calgary, AB",
+    time: "2 months ago",
+    avatarColor: "#223138",
   },
 ];
 

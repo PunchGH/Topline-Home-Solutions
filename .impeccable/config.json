@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-09-15T03:50:05.303Z",
+        "reason": "Intentional decorative corner-frame behind a photo (.trust__media::before), echoing the logo's gold rule-line motif named in the direction contract's OWN-WORLD block (.impeccable/surfaces/index-html.md) -- not a card/callout emphasis border. My own design judgment, not user-confirmed."
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "web/app/globals.css"
+        ],
+        "createdAt": "2026-09-15T04:00:56.316Z",
+        "reason": "Same intentional corner-frame motif (.trust__media::before) re-registered after the Next.js pivot moved the stylesheet from styles.css to web/app/globals.css. My own design judgment, not user-confirmed."
+      }
+    ]
+  }
+}
