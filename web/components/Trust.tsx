@@ -36,8 +36,8 @@ export default function Trust() {
             <RevealText text="Durable Home Insulation Solutions You Can Trust" />
             <Reveal as="p" delay={0.2}>
               Homeowners trust TopLine Home Solutions for insulation that truly
-              lasts, backed by 20+ years of experience from the first inspection
-              to the final walkthrough.
+              lasts, backed by dedicated craftsmanship, premium materials, and thorough
+              care from the first inspection to the final walkthrough.
             </Reveal>
             <Reveal className="hero__ctas" style={{ marginTop: 34 }} delay={0.3}>
               <a className="btn btn--amber" href="#contact">Schedule Now</a>

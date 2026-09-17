@@ -41,9 +41,9 @@ export default function About() {
           </Reveal>
 
           <Reveal className="about__credential" delay={0.3}>
-            <CountUp className="about__years" to={20} suffix="+ Years" />
+            <CountUp className="about__years" to={100} suffix="%" />
             <span className="about__years-note">
-              of attic and insulation work across two Canadian metros
+              Dedicated commitment to quality workmanship &amp; customer satisfaction across Ottawa &amp; Calgary
             </span>
           </Reveal>
 
