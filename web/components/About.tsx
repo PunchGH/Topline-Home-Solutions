@@ -1,4 +1,7 @@
-import Image from "next/image";
+import CountUp from "./motion/CountUp";
+import ParallaxImage from "./motion/ParallaxImage";
+import RevealText from "./motion/RevealText";
+import { Reveal } from "./motion/primitives";
 
 // Copy is the real toplinehome.ca/about-us text, condensed for this position:
 // whole sentences were dropped to keep the section short, and the 20+ years
@@ -19,42 +22,41 @@ export default function About() {
     <section id="about" className="section section--soft">
       <div className="wrap about">
         <div className="about__body">
-          <h2>Home Attic Professionals Serving Ottawa, ON &amp; Calgary, AB Residents</h2>
-          <p className="about__lede">
+          <RevealText text="Home Attic Professionals Serving Ottawa, ON & Calgary, AB Residents" />
+          <Reveal as="p" className="about__lede" delay={0.15}>
             Home attic professionals in Ottawa, ON &amp; Calgary, AB at TopLine
             Home Solutions ensure your attic performs at its best. We handle
             insulation, air sealing, and complete home protection solutions with
             a plan that fits needs and budget. Homeowners count on TopLine Home
             Solutions for steady comfort, lower energy use, and lasting peace of
             mind.
-          </p>
-          <p>
+          </Reveal>
+          <Reveal as="p" delay={0.25}>
             TopLine Home Solutions is a Canadian home service company focused on
             attic care and whole-home efficiency. Our team provides full
             insulation and protection solutions for homeowners, ensuring your
             comfort, safety, and your home&rsquo;s long-term energy performance.
             Quality workmanship is at the heart of what we do, delivering results
             you feel the moment you walk through the door.
-          </p>
+          </Reveal>
 
-          <div className="about__credential">
-            <span className="about__years">20+ Years</span>
+          <Reveal className="about__credential" delay={0.3}>
+            <CountUp className="about__years" to={20} suffix="+ Years" />
             <span className="about__years-note">
               of attic and insulation work across two Canadian metros
             </span>
-          </div>
+          </Reveal>
 
-          <div className="about__ctas">
+          <Reveal className="about__ctas" delay={0.4}>
             <a className="btn btn--amber" href="#contact">Get Your Free Quote</a>
             <a className="btn btn--ghost-dark" href="#services">View All Services</a>
-          </div>
+          </Reveal>
         </div>
 
         <div className="about__media">
-          <Image
+          <ParallaxImage
             src={ABOUT_PHOTO}
             alt="Brick homes with steep peaked rooflines behind a timber fence"
-            fill
             sizes="(max-width: 980px) 90vw, 42vw"
           />
         </div>

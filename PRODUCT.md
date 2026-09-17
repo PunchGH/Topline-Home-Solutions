@@ -10,6 +10,8 @@ web
 
 Next.js (App Router) + React + TypeScript, plain CSS (no Tailwind — a custom design system was already hand-built for this brand and carries over directly). Superseded the original static-HTML plan (`IMPLEMENTATION_1.md` §6) per explicit user request, 2026-09-15. Still frontend-only: no backend route handlers wired to a real database/CRM, no real form submission.
 
+Motion runs on Framer Motion (`framer-motion`, added 2026-09-17 at user request). It must live in `web/package.json`: Vercel builds from `web/`, so a copy installed at the repo root is invisible to the deploy.
+
 ## Users
 
 Homeowners in Ottawa, ON and Calgary, AB (and surrounding service-area towns) evaluating a home-attic contractor — comfort, energy-bill, and moisture/mold problems drive them to look for insulation, air sealing, and roof-protection services. Secondary: the TopLine Home Solutions team itself, evaluating this build as a sales-demo prototype to decide whether to move forward with a real site.

@@ -1,20 +1,22 @@
 import { offices } from "@/lib/content";
 import QuoteForm from "./QuoteForm";
+import RevealText from "./motion/RevealText";
+import { Reveal, Stagger, StaggerItem } from "./motion/primitives";
 
 export default function ContactCTA() {
   return (
     <section id="contact" className="section section--ink">
       <div className="wrap cta">
         <div className="cta__info">
-          <h2>Reach Out Today!</h2>
-          <p>
+          <RevealText text="Reach Out Today!" />
+          <Reveal as="p" delay={0.15}>
             Ready for a warmer winter, a cooler summer, and a healthier home?
             Contact us and let our professionals build a plan for your home.
-          </p>
+          </Reveal>
 
-          <div className="cta__offices">
+          <Stagger className="cta__offices" stagger={0.15} delay={0.2}>
             {Object.values(offices).map((office) => (
-              <div className="cta__office" key={office.id}>
+              <StaggerItem className="cta__office" key={office.id} y={36}>
                 <div className="cta__office-city">
                   {office.city}, {office.region}
                 </div>
@@ -26,12 +28,14 @@ export default function ContactCTA() {
                     {office.address}
                   </a>
                 </address>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
 
-        <QuoteForm />
+        <Reveal x={80} y={0} amount={0.2} delay={0.1}>
+          <QuoteForm />
+        </Reveal>
       </div>
     </section>
   );

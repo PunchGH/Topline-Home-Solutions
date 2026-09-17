@@ -1,4 +1,6 @@
 import { reviews } from "@/lib/content";
+import RevealText from "./motion/RevealText";
+import { Reveal, Stagger, StaggerItem } from "./motion/primitives";
 
 const Star = () => (
   <svg viewBox="0 0 20 20" fill="#e3960c" aria-hidden="true">
@@ -26,12 +28,14 @@ export default function Reviews() {
     <section className="section section--steel-pale">
       <div className="wrap">
         <div className="section__head">
-          <h2>What Homeowners Say</h2>
-          <p>Real reviews from real customers will replace these before launch.</p>
-          <span className="reviews__flag">Prototype widget, not a live Google Business Profile</span>
+          <RevealText text="What Homeowners Say" />
+          <Reveal as="p" delay={0.15}>Real reviews from real customers will replace these before launch.</Reveal>
+          <Reveal as="span" className="reviews__flag" delay={0.25}>
+            Prototype widget, not a live Google Business Profile
+          </Reveal>
         </div>
 
-        <div className="gsummary">
+        <Reveal className="gsummary" y={0} x={-50}>
           <GoogleG />
           <div className="gsummary__score">5.0</div>
           <div className="gsummary__mid">
@@ -39,11 +43,11 @@ export default function Reviews() {
             <span className="gsummary__count">Based on {reviews.length} Google reviews</span>
           </div>
           <a className="gsummary__cta" href="#contact">Leave a review</a>
-        </div>
+        </Reveal>
 
-        <div className="greviews">
+        <Stagger className="greviews" stagger={0.14}>
           {reviews.map((r) => (
-            <article className="greview-card" key={r.name + r.time}>
+            <StaggerItem as="article" className="greview-card" key={r.name + r.time} y={60}>
               <div className="greview-card__head">
                 <div className="greview-card__avatar" style={{ background: r.avatarColor }}>
                   {r.name.charAt(0)}
@@ -55,9 +59,9 @@ export default function Reviews() {
               </div>
               <div className="greview-card__stars"><Stars /></div>
               <p className="quote">{r.quote}</p>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

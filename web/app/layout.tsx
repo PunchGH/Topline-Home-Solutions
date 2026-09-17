@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { oswald, barlow, spaceMono } from "./fonts";
 import { CityProvider } from "@/components/CityContext";
+import { MotionProvider } from "@/components/motion/primitives";
 import "./globals.css";
 
 // No production domain exists yet. Set NEXT_PUBLIC_SITE_URL when this is
@@ -59,7 +60,9 @@ export default function RootLayout({
       className={`${oswald.variable} ${barlow.variable} ${spaceMono.variable}`}
     >
       <body>
-        <CityProvider>{children}</CityProvider>
+        <MotionProvider>
+          <CityProvider>{children}</CityProvider>
+        </MotionProvider>
       </body>
     </html>
   );

@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { faqs } from "@/lib/content";
+import RevealText from "./motion/RevealText";
+import { Reveal, Stagger, StaggerItem } from "./motion/primitives";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -10,13 +12,13 @@ export default function Faq() {
     <section id="faq" className="section section--soft">
       <div className="wrap">
         <div className="section__head">
-          <h2>Questions, Answered Straight</h2>
+          <RevealText text="Questions, Answered Straight" />
         </div>
-        <div className="faq__list">
+        <Stagger className="faq__list" stagger={0.08}>
           {faqs.map((item, i) => {
             const open = openIndex === i;
             return (
-              <div className="faq-item" data-open={open} key={item.q}>
+              <StaggerItem className="faq-item" data-open={open} key={item.q} y={28}>
                 <button
                   type="button"
                   className="faq-item__q"
@@ -31,14 +33,14 @@ export default function Faq() {
                     <p>{item.a}</p>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             );
           })}
-        </div>
-        <p className="faq__disclosure">
+        </Stagger>
+        <Reveal as="p" className="faq__disclosure" y={16}>
           These answers were drafted from our real service details for this
           prototype. We are happy to refine the wording together before launch.
-        </p>
+        </Reveal>
       </div>
     </section>
   );

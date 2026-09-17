@@ -38,3 +38,23 @@ Still open, deliberately not done: no `/services` index page (that URL 404s), "R
 **Fixed in passing:** the amber corner bracket on the Trust photo never rendered. It sat at a negative inset inside an `overflow: hidden` box at `z-index: -1`, so it was both clipped and painted behind the section background. The media frames now use `isolation: isolate` with the bracket at `z-index: 0` and the photo at `z-index: 1`. Applied to Trust, About, and the service hero.
 
 **Found during the round 3 screenshot pass, NOT fixed (outside this round's scope):** four image slots use `plus.unsplash.com`, the paid Unsplash+ tier, which serves a tiled "Unsplash+" watermark to unauthenticated requests. Verified by zooming a capture. The slots are the hero video poster (`Hero.tsx`, also the only hero visual reduced-motion users see), the Trust photo (`Trust.tsx`), and gallery tile g2 (`lib/content.ts`, same frame as the hero poster). The About section was moved off the watermarked tier during this round. Everything on `images.unsplash.com` is clean. This needs fixing before the prototype is shown to the client.
+
+---
+
+## Round 4 (2026-09-17): motion
+
+Client asked for the whole homepage animated with strong scroll triggered motion, then chose all three candidate centerpieces, bold supporting motion, and Framer Motion.
+
+**Centerpieces (all scroll scrubbed):**
+1. **Hero zoom out.** The hero pins for 220vh (180vh at 980px and below). The video frame's clip-path insets to a framed panel on the warm paper ground while the footage pushes in to 1.12 and the headline lifts and fades. The headline builds word by word on load.
+2. **Services sideways scroll.** From 768px up, the section pins and the card row translates left exactly one pixel per pixel of scroll: section height is measured as sticky height plus track overflow. A thin amber bar tracks progress. Phones keep the stacked grid.
+3. **Process line draw.** From 981px up, the section pins for 250vh and the amber line fills across the steps; each circle floods amber with a small scale pulse as the fill reaches its measured center, and its text lifts to full opacity. At 980px and below it becomes a vertical timeline that fills as the steps scroll past, unpinned.
+
+**Supporting (bold, replays each time a section re-enters):** section headings reveal word by word through per word masks; paragraphs, CTAs, and card groups stagger in; photos wipe open left to right and drift with parallax; "20+ Years" counts up; contact offices stagger and the quote form slides in from the right; footer columns stagger.
+
+**Reduced motion:** `MotionConfig reducedMotion="user"` strips transforms site wide. Nothing pins, no parallax, photos show without the wipe, the process line and all steps render fully lit, and the count shows its final number. Note the hero video itself now plays for reduced motion users too: the client removed the CSS rule that hid it (commit 01b7fa0), so the FIRST VIEWPORT line above about a static poster is stale.
+
+**Engineering traps, keep these:**
+- Pinned layouts gate on a `useSyncExternalStore` media query that is false on the server, so SSR renders the plain layout and the pinned version switches on after mount with no hydration mismatch.
+- The image wipe's in-view trigger sits on an unclipped wrapper. A target fully hidden by its own clip-path never reports as intersecting, so triggering on the clipped element leaves photos permanently blank.
+- `useTransform(() => ...)` subscribes only to the motion values read on its first run. Read every source unconditionally before branching, or a mode switch leaves the output deaf to the scroll value it needs.

@@ -1,30 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { offices, services } from "@/lib/content";
+import { Stagger, StaggerItem } from "./motion/primitives";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="wrap">
-        <div className="footer__top">
-          <div className="footer__col footer__brand">
+        <Stagger className="footer__top" stagger={0.1} amount={0.15}>
+          <StaggerItem className="footer__col footer__brand" y={30}>
             <Image src="/topline-logo.png" alt="TopLine Home Solutions" width={220} height={152} />
             <p>
               Attic insulation, air sealing, and roof protection in one
               integrated plan for homeowners in Ottawa, ON &amp; Calgary, AB.
             </p>
-          </div>
+          </StaggerItem>
 
-          <div className="footer__col">
+          <StaggerItem className="footer__col" y={30}>
             <h4>Services</h4>
             <ul>
               {services.map((s) => (
                 <li key={s.slug}><Link href={s.href}>{s.name}</Link></li>
               ))}
             </ul>
-          </div>
+          </StaggerItem>
 
-          <div className="footer__col">
+          <StaggerItem className="footer__col" y={30}>
             <h4>Company</h4>
             <ul>
               <li><Link href="/#about">About Us</Link></li>
@@ -32,9 +33,9 @@ export default function Footer() {
               <li><Link href="/#gallery">Gallery</Link></li>
               <li><Link href="/#contact">Contact</Link></li>
             </ul>
-          </div>
+          </StaggerItem>
 
-          <div className="footer__col">
+          <StaggerItem className="footer__col" y={30}>
             <h4>Locations</h4>
             {(Object.values(offices)).map((office) => (
               <div className="footer__office" key={office.id}>
@@ -46,8 +47,8 @@ export default function Footer() {
                 <div className="footer__areas">{office.areas.join(", ")}</div>
               </div>
             ))}
-          </div>
-        </div>
+          </StaggerItem>
+        </Stagger>
 
         <div className="footer__bottom">
           <span>© 2026 TopLine Home Solutions. Prototype build, not the live site.</span>
