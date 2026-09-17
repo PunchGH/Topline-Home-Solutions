@@ -7,7 +7,7 @@ export default function Gallery() {
       <div className="wrap">
         <div className="section__head">
           <h2>The Kind of Work We Do</h2>
-          <p>Full project photography from our own jobs is coming soon — these stand in for now.</p>
+          <p>Full project photography from our own jobs is coming soon. These stand in for now.</p>
           <span className="reviews__flag">Stand-in photography, not a real TopLine job site</span>
         </div>
         <div className="gallery__grid">

@@ -26,15 +26,15 @@ export default function Hero() {
           Boost Energy Efficiency and <em>Indoor Air Quality</em>
         </h1>
         <p className="hero__lede reveal reveal--2">
-          Ottawa, ON &amp; Calgary, AB — Attic, Air Sealing &amp; Roof Specialists
+          Attic, Air Sealing &amp; Roof Specialists in Ottawa, ON &amp; Calgary, AB
         </p>
         <div className="hero__ctas reveal reveal--3">
           <a className="btn btn--amber" href="#contact">Get Your Free Quote</a>
-          <a className="btn btn--ghost-light" href="#trust">About Us</a>
+          <a className="btn btn--ghost-light" href="#services">View Our Services</a>
         </div>
       </div>
 
-      <a href="#services" className="hero__scroll" aria-label="Scroll to services">
+      <a href="#about" className="hero__scroll" aria-label="Scroll to the next section">
         <span className="hero__scroll-line" aria-hidden="true" />
         Scroll
       </a>

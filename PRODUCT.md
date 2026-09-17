@@ -16,7 +16,7 @@ Homeowners in Ottawa, ON and Calgary, AB (and surrounding service-area towns) ev
 
 ## Product Purpose
 
-A one-page marketing/lead-generation prototype for TopLine Home Solutions, a Canadian home-attic and insulation contractor (20+ years experience). Purpose of this specific build: a frontend-only demo to show as a lead/pitch, proving what a redesigned site could look like — not a production deployment.
+A marketing/lead-generation prototype for TopLine Home Solutions, a Canadian home-attic and insulation contractor (20+ years experience). Purpose of this specific build: a frontend-only demo to show as a lead/pitch, proving what a redesigned site could look like — not a production deployment.
 
 ## Positioning
 
@@ -24,16 +24,19 @@ TopLine bundles insulation, air sealing, and roof protection into one integrated
 
 ## Operating Context
 
-Real company, two physical offices (Nepean/Ottawa, ON and Calgary, AB) with distinct phone numbers, addresses, and service-area lists. Services: Attic Insulation, Air Sealing & Ventilation, Cellulose & Soundproofing, GoNano Roofing Spray, Attic Insulation Removal, Mold Removal & Prevention (plus a referenced but uncontented "Roof Inspection" nav item). Source copy is scraped verbatim from toplinehome.ca (home, about, services index + 5 service detail pages, contact) — those `.md` files in the project root are ground truth for company facts.
+Real company, two physical offices (Nepean/Ottawa, ON and Calgary, AB) with distinct phone numbers, addresses, and service-area lists. Services: Attic Insulation, Air Sealing & Ventilation, Cellulose & Soundproofing, GoNano Roofing Spray, Attic Insulation Removal, Mold Removal & Prevention (plus a referenced but uncontented "Roof Inspection" nav item). Source copy is scraped verbatim from toplinehome.ca (home, about, services index + 6 service detail pages, contact) — those `.md` files in the project root are ground truth for company facts.
 
 ## Capabilities and Constraints
 
 - Frontend only: no backend, no real form submission, no CMS.
 - No real project/jobsite photography exists on the live site (gallery page confirmed "Coming Soon" via direct fetch on 2026-09-15) — curated stock photography stands in, explicitly swap-ready.
-- 6 real service icon SVGs exist on toplinehome.ca and are hotlinked directly.
+- No assets are hotlinked from toplinehome.ca. The service icon SVGs that were hotlinked in earlier rounds were removed with the service-card icon badges (2026-09-16), so the prototype no longer depends on the live site being up.
 - No testimonials exist on the source site — placeholder reviews are used, styled as a Google-review widget per client request (2026-09-15), and must carry a visible "prototype, not a live Google Business Profile" disclosure — never presented as a real connection.
 - Process-flow copy (4-step) and FAQ copy are authored (not scraped) to fill sections the layout calls for; both are flagged to the client as needing sign-off before any real launch.
-- Dual-location city toggle (Ottawa ⇄ Calgary) swaps phone/address/map client-side only.
+- Dual-location city toggle (Ottawa ⇄ Calgary) swaps the nav phone number client-side only. It moved from the contact section to the nav on 2026-09-16, when the contact section switched to showing both offices at once.
+- Multi-page as of 2026-09-16: the home page plus six service detail routes at `/services/<slug>`, statically generated. Nav and footer links are root-relative so they work from any route. `/services` itself has no index page yet and will 404.
+- Favicon, apple icon, and the Open Graph card are generated from `public/topline-logo.png` by `web/scripts/build-brand-assets.mjs` (sharp, offline). Rerun it if the logo changes.
+- `robots: noindex, nofollow` is set in `app/layout.tsx`. LAUNCH BLOCKER: it must be removed before a real deployment.
 
 ## Brand Commitments
 

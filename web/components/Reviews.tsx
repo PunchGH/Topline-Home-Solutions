@@ -28,7 +28,7 @@ export default function Reviews() {
         <div className="section__head">
           <h2>What Homeowners Say</h2>
           <p>Real reviews from real customers will replace these before launch.</p>
-          <span className="reviews__flag">Prototype widget — not a live Google Business Profile</span>
+          <span className="reviews__flag">Prototype widget, not a live Google Business Profile</span>
         </div>
 
         <div className="gsummary">

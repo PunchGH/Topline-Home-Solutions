@@ -36,7 +36,8 @@ export default function Faq() {
           })}
         </div>
         <p className="faq__disclosure">
-          These answers were drafted from our real service details for this prototype — happy to refine the wording together before launch.
+          These answers were drafted from our real service details for this
+          prototype. We are happy to refine the wording together before launch.
         </p>
       </div>
     </section>

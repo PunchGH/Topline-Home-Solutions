@@ -35,8 +35,8 @@ export default function Trust() {
             <h2>Durable Home Insulation Solutions You Can Trust</h2>
             <p>
               Homeowners trust TopLine Home Solutions for insulation that truly
-              lasts — 20+ years of experience, from the first inspection to the
-              final walkthrough.
+              lasts, backed by 20+ years of experience from the first inspection
+              to the final walkthrough.
             </p>
             <div className="hero__ctas" style={{ marginTop: 34 }}>
               <a className="btn btn--amber" href="#contact">Schedule Now</a>

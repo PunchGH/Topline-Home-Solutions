@@ -1,8 +1,8 @@
 // Real company content sourced from the scraped toplinehome.ca pages in the
-// project root (home, about-us, services, 5 service detail pages, contact).
+// project root (home, about-us, services, 6 service detail pages, contact).
 // Items explicitly marked "authored" were written to fill sections the chosen
-// layout calls for but the source site doesn't yet have text for — flagged
-// in IMPLEMENTATION_1.md / PRODUCT.md for client review before real launch.
+// layout calls for but the source site doesn't yet have text for. Those are
+// flagged in IMPLEMENTATION_1.md / PRODUCT.md for client review before launch.
 
 export type CityId = "ottawa" | "calgary";
 
@@ -65,8 +65,9 @@ export interface Service {
   slug: string;
   name: string;
   description: string;
-  icon: string;
   image: string;
+  /** Describes the photograph itself, not the service. */
+  imageAlt: string;
   href: string;
 }
 
@@ -76,58 +77,58 @@ export const services: Service[] = [
     name: "Attic Insulation",
     description:
       "High-performance cellulose insulation improves your home's thermal efficiency and year-round comfort, reducing heat loss and keeping every room comfortable.",
-    icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-01.svg",
     image: "https://images.unsplash.com/photo-1753460133435-bf41927f77f7?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    href: "https://www.toplinehome.ca/services/attic-insulation/",
+    imageAlt: "Reflective foil insulation lining a pitched attic roof",
+    href: "/services/attic-insulation",
   },
   {
     slug: "air-sealing-ventilation",
     name: "Air Sealing & Ventilation",
     description:
       "We seal structural air leaks to keep conditioned air inside. Better airflow controls moisture and improves your HVAC's overall efficiency.",
-    icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-02.svg",
     image: "https://images.unsplash.com/photo-1558358235-a0a93f68a52c?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    href: "https://www.toplinehome.ca/services/air-sealing-ventilation/",
+    imageAlt: "Yellow flexible ducting running to a ceiling vent",
+    href: "/services/air-sealing-ventilation",
   },
   {
     slug: "cellulose-soundproofing",
     name: "Cellulose & Soundproofing",
     description:
       "Dense insulation offers superior reduction between walls for quieter living areas. Enjoy better acoustic control and enhanced daily relaxation in your home.",
-    icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-03.svg",
     image: "https://images.unsplash.com/photo-1753363562647-6a5f6296dedc?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    href: "https://www.toplinehome.ca/services/cellulose-soundproofing/",
+    imageAlt: "Foil-lined attic cavity framed by timber roof beams",
+    href: "/services/cellulose-soundproofing",
   },
   {
     slug: "gonano-roofing-spray",
     name: "GoNano Roofing Spray",
     description:
       "This advanced roof coating provides waterproofing and extra durability to any surface, adding years to your roof's life and increasing weather resistance.",
-    icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-04.svg",
     image: "https://images.unsplash.com/photo-1527484728228-e601f31ddefa?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    href: "https://www.toplinehome.ca/services/gonano-roofing-spray/",
+    imageAlt: "Close view of weathered wood shingles on a roof slope",
+    href: "/services/gonano-roofing-spray",
   },
   {
     slug: "attic-insulation-removal",
     name: "Attic Insulation Removal",
     description:
       "Our professional crew safely removes old or contaminated materials to keep your family healthy while preparing for new, high-performance solutions.",
-    icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-05.svg",
     image: "https://images.unsplash.com/photo-1753363562638-398f75158ea9?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    href: "https://www.toplinehome.ca/services/attic-insulation-removal/",
+    imageAlt: "Cleared attic floor beneath a foil-lined roof",
+    href: "/services/attic-insulation-removal",
   },
   {
     slug: "mold-removal-prevention",
     name: "Mold Removal & Prevention",
     description:
       "Targeted treatments identify and eliminate mold colonies at the source, protecting your indoor air quality and preventing future mold growth.",
-    icon: "https://www.toplinehome.ca/wp-content/uploads/2026/06/icon-06.svg",
     image: "https://images.unsplash.com/photo-1708895240122-418c6902685e?fm=jpg&q=80&w=900&auto=format&fit=crop",
-    href: "https://www.toplinehome.ca/services/mold-removal-prevention/",
+    imageAlt: "Dark mold spreading in patches across a pale wall",
+    href: "/services/mold-removal-prevention",
   },
 ];
 
-// Authored — not scraped. Flagged for client review (see PRODUCT.md).
+// Authored, not scraped. Flagged for client review (see PRODUCT.md).
 export const processSteps = [
   {
     step: "01",
@@ -137,7 +138,7 @@ export const processSteps = [
   {
     step: "02",
     title: "Personalized Plan",
-    body: "You get a clear plan — insulation, sealing, or roofing — sized to your home, not a one-size fix.",
+    body: "You get a clear plan for insulation, sealing, or roofing, sized to your home rather than a one-size fix.",
   },
   {
     step: "03",
@@ -191,7 +192,7 @@ export const galleryImages: GalleryImage[] = [
   },
 ];
 
-// Placeholder testimonials — the live site has none yet. Rendered with a
+// Placeholder testimonials. The live site has none yet. Rendered with a
 // visible "sample" tag per the confirmed prototype plan; never as real quotes.
 export interface Review {
   quote: string;
@@ -201,7 +202,7 @@ export interface Review {
   avatarColor: string;
 }
 
-// Styled as a Google-review widget per the client's request — content is the
+// Styled as a Google-review widget per the client's request. Content is the
 // same real sample quotes used elsewhere, names/avatars/dates are prototype
 // placeholders, not a live Google Business Profile connection.
 export const reviews: Review[] = [
@@ -231,23 +232,23 @@ export const reviews: Review[] = [
   },
 ];
 
-// Authored — grounded in real service copy, flagged for client review.
+// Authored, grounded in real service copy, flagged for client review.
 export const faqs = [
   {
     q: "How do I know if my attic needs new insulation?",
-    a: "Drafty rooms, uneven temperatures between floors, and rising energy bills are the most common signs. A free inspection is the fastest way to know for sure — we check your attic's depth, condition, and air sealing before recommending anything.",
+    a: "Drafty rooms, uneven temperatures between floors, and rising energy bills are the most common signs. A free inspection is the fastest way to know for sure. We check your attic's depth, condition, and air sealing before recommending anything.",
   },
   {
     q: "What is cellulose insulation, and why do you use it?",
-    a: "Cellulose is a dense, eco-friendly insulation made from recycled paper. It fills gaps more completely than many alternatives, adds real soundproofing between floors and walls, and improves fire resistance — which is why it's our standard for attic and wall insulation.",
+    a: "Cellulose is a dense, eco-friendly insulation made from recycled paper. It fills gaps more completely than many alternatives, adds real soundproofing between floors and walls, and improves fire resistance, which is why it's our standard for attic and wall insulation.",
   },
   {
     q: "How long does GoNano Roofing Spray protection last?",
-    a: "GoNano is designed to add years of extra protection to an existing roof surface by sealing it against rain, wind, and sun damage. Exact lifespan depends on your roof's condition going in — we'll give you a specific estimate during your inspection.",
+    a: "GoNano is designed to add years of extra protection to an existing roof surface by sealing it against rain, wind, and sun damage. Exact lifespan depends on your roof's condition going in. We will give you a specific estimate during your inspection.",
   },
   {
     q: "Do you serve my area?",
-    a: "We operate out of two hubs — Ottawa, ON and Calgary, AB — and serve the surrounding communities from each (see the full list in the footer). If you're nearby and unsure, just reach out.",
+    a: "We operate out of two hubs, Ottawa, ON and Calgary, AB, and serve the surrounding communities from each (see the full list in the footer). If you're nearby and unsure, just reach out.",
   },
   {
     q: "Is the initial inspection free?",
